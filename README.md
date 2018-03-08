@@ -5,7 +5,7 @@ Visual Studio add-in for hierarchical build structure visualization
 
 # Build Skull
 
-![Alt text](/img/logo.jpg)
+![Build Skull](/img/logo.png)
 
 Visual Studio addin which makes easier to observe all your TFS builds in hierarchical structure, check status of builds and quickly call common functions.
 
@@ -16,4 +16,4 @@ Visual Studio addin which makes easier to observe all your TFS builds in hierarc
 * You can write own extentions to other version control and continuous integration systems
 * Support of Visual Studio 2012
 
-![Alt text](/img/screen.jpg)
+![Hierarchical View - addin in action](/img/screen.png)
