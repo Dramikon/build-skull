@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{56B75D91-7622-43BF-9F47-268146146C01}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BuildDesk_UnitTests</RootNamespace>
+    <AssemblyName>BuildDesk_UnitTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath Condition="'$(OutputPath)'==''">bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath Condition="'$(OutputPath)'==''">bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.8.0" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.9.0" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.10.0" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.11.0">
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.11.0" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.10.0" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.11.0" />
+    <!---->
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+    <Reference Include="Microsoft.VSSDK.UnitTestLibrary" />
+    <Reference Include="Microsoft.VSSDK.TestHostFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PackageTest.cs" />
+    <!---->
+    <Compile Include="MenuItemTests\MenuItemCallback.cs" />
+    <Compile Include="MenuItemTests\UIShellServiceMock.cs" />
+    <!---->
+    <!---->
+    <Compile Include="MyToolWindowTest\MyToolWindow.cs" />
+    <Compile Include="MyToolWindowTest\ShowToolWindow.cs" />
+    <Compile Include="MyToolWindowTest\WindowFrameMock.cs" />
+    <Compile Include="MyToolWindowTest\UIShellServiceMock.cs" />
+    <Compile Include="TFSTests\TFSFacadeTests.cs" />
+    <Compile Include="ViewModelTests\BuildDeskVMTests.cs" />
+    <!---->
+    <!---->
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BuildSkull.Contracts\BuildSkull.Contracts.csproj">
+      <Project>{74a2d3cf-98bd-4452-8aac-f2db15fa2739}</Project>
+      <Name>BuildDesk.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BuildSkull.TFS\BuildSkull.TFS.csproj">
+      <Project>{1ecbe778-0cab-44cd-bd1c-374298d29ec1}</Project>
+      <Name>BuildDesk.TFS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BuildSkull.csproj">
+      <Project>{87E6FAB6-FA5D-4CAA-A57C-82129AF1CF4E}</Project>
+      <Name>BuildDesk</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
